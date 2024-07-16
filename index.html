@@ -8,26 +8,49 @@
     <link rel="icon" href="images/logo.png">
 </head>
 <body>
-    <header>
-        <img src="images/rex.png" alt="Rex" class="rex-img">
-        <h1>ARK: Survival Evolved</h1>
-    </header>
-    <main>
-        <section class="intro">
-            <div class="intro-content">
-                <h2>Sobre el juego</h2>
-                <p>ARK: Survival Evolved es un juego de supervivencia en un mundo abierto lleno de dinosaurios y otras criaturas prehistóricas. Explora, construye, caza y domestica a las bestias más feroces en un entorno hostil.</p>
-                <p>Juega como un hombre o una mujer desnudo, congelándote y muriéndote de hambre en una isla misteriosa. Debes cazar, cosechar, crear objetos, cultivar, y construir refugios para sobrevivir. Usa tu habilidad y astucia para matar, domesticar, criar y cabalgar dinosaurios y otras criaturas primitivas.</p>
-                <a href="home.html" class="btn">Explora más</a>
-            </div>
-            <div class="intro-image">
-                <img src="images/portada.png" alt="Portada">
-                <a href="https://store.steampowered.com/app/346110/ARK_Survival_Evolved/" class="btn-shop">Ir a la tienda</a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 ARK: Survival Evolved by LestherHD</p>
-    </footer>
+    <div class="content">
+        <header>
+            <img src="images/rex.png" alt="Rex" class="rex-img">
+            <h1>ARK: Survival Evolved</h1>
+        </header>
+        <main>
+            <section class="intro">
+                <div class="intro-content">
+                    <h2>Sobre el juego</h2>
+                    <p>ARK: Survival Evolved es un juego de supervivencia en un mundo abierto lleno de dinosaurios y otras criaturas prehistóricas. Explora, construye, caza y domestica a las bestias más feroces en un entorno hostil.</p>
+                    <p>Juega como un hombre o una mujer desnudo, congelándote y muriéndote de hambre en una isla misteriosa. Debes cazar, cosechar, crear objetos, cultivar, y construir refugios para sobrevivir. Usa tu habilidad y astucia para matar, domesticar, criar y cabalgar dinosaurios y otras criaturas primitivas.</p>
+                    <p>Visitas: <span id="visit-count">0</span></p>
+                    <a href="home.html" class="btn">Explora más</a>
+                </div>
+                <div class="intro-image">
+                    <img src="images/portada.png" alt="Portada">
+                    <a href="https://store.steampowered.com/app/346110/ARK_Survival_Evolved/" class="btn-shop">Ir a la tienda</a>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 ARK: Survival Evolved by LestherHD</p>
+        </footer>
+    </div>
+    <script>
+        // Obtén el contador actual del almacenamiento local
+        let visitCount = localStorage.getItem('visitCount');
+
+        // Si el contador no existe, inicialízalo a 0
+        if (visitCount === null) {
+            visitCount = 0;
+        } else {
+            visitCount = parseInt(visitCount);
+        }
+
+        // Incrementa el contador
+        visitCount++;
+
+        // Actualiza el contador en el almacenamiento local
+        localStorage.setItem('visitCount', visitCount);
+
+        // Muestra el contador en la página
+        document.getElementById('visit-count').textContent = visitCount;
+    </script>
 </body>
 </html>
